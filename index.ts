@@ -28,7 +28,11 @@ app.post('/message', async(req, res) => {
       "Content-Type": "application/json"
     }
   })
-  res.json(response)
+
+  console.log(response)
+  res.json({
+    text: 1234
+  })
 })
 
 
