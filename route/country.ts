@@ -18,6 +18,46 @@ routes.get("/", async (req, res) => {
   }
 });
 
+routes.get("/list", (req, res) => {
+  const  { sort } = req.body
+  let arr = [
+    {
+      name: 'zhangsan',
+      sex: 'man',
+      age: 23,
+      city: 'shenzhen'
+    },
+    {
+      name: 'lisi',
+      age: 24,
+      city: 'guangzhou',
+      sex: 'woman'
+    },
+    {
+      name: 'wangwu',
+      age: 25,
+      city: 'beijing',
+      sex: 'man'
+    },
+    {
+      name: 'zhaoliu',
+      age: 26,
+      city: 'shanghai',
+      sex: 'man'
+    }
+  ];
+  if(sort === 'asc') {
+    return res.json({
+      sortList: arr.reverse()
+    })
+  }
+  else {
+    return res.json({
+      sortList: arr
+    })
+  }
+})
+
 routes.post("/", async (req, res) => {
   try {
     // const country: ICountry = req.body;
