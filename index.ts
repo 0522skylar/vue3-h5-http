@@ -38,7 +38,7 @@ app.post('/message', async(req, res) => {
 })
 
 
-app.use("/countries", countryRoutes);
+app.use("/route", countryRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

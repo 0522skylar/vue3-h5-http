@@ -3,6 +3,18 @@ import { Router } from "express";
 
 const routes = Router();
 
+
+routes.all("*", function(req, res, next) {
+  // res.header("Access-Control-Allow-Origin", "*");
+  // res.header("Access-Control-Allow-Methods", 'PUT, POST, GET, DELETE, OPTIONS');
+  // res.header("Content-Type", 'application.json;charset=utf-8');
+  // next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+})
 routes.get("/", async (req, res) => {
   try {
     const countries = [
