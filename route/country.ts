@@ -31,7 +31,7 @@ routes.get("/", async (req, res) => {
 });
 
 routes.get("/list", (req, res) => {
-  const  { sort } = req.body
+  const  { sort } = req.query
   let arr = [
     {
       name: 'zhangsan',
