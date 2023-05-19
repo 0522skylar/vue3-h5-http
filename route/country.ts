@@ -13,6 +13,8 @@ routes.all("*", function(req, res, next) {
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Expose-Headers', '*, Authorization') // 传递请求头给客户端
+  res.header('Authorization', '12344')
   next();
 })
 routes.get("/", async (req, res) => {
